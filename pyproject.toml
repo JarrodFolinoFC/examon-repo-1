@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "examon-repo-1"
-version = "0.1.0"
+version = "1.0.1"
 description = ""
-authors = ["Jarrod Folino <jarrod.folino@fundingcircle.com>"]
+authors = ["Jarrod Folino <jdfolino@icloud.com>"]
 readme = "README.md"
 packages = [{include = "examon_repo_1"}]
 
