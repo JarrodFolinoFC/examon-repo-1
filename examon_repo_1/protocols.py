@@ -1,4 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 
@@ -29,7 +29,8 @@ def question_02():
     return SizedClass()
 
 
-@quiz_item(choices=[['m2'], ['m1', 'm2']], tags=['abc'])
+@quiz_item(choices=[['m2'], ['m1', 'm2']], tags=['abc',
+                                                 'abc.abstractmethod'])
 def question_03():
     from abc import ABC, abstractmethod
 
@@ -43,7 +44,8 @@ def question_03():
     return list(Abstract.__abstractmethods__)
 
 
-@quiz_item(choices=[['m2'], ['m1', 'm2']], tags=['abc'])
+@quiz_item(choices=[['m2'], ['m1', 'm2']],
+           tags=['abc', 'abc.abstractmethod'])
 def question_04():
     import abc
 

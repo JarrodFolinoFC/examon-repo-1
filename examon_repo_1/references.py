@@ -1,4 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 
@@ -23,14 +23,14 @@ def question_03():
     return x is None
 
 
-@quiz_item(choices=[], tags=['references'])
+@quiz_item(choices=[], tags=['references', 'moderate'])
 def question_04():
     l1 = [3, [55, 44], (7, 8, 9)]
     l2 = l1[:]
     return l1 is l2
 
 
-@quiz_item(choices=[], tags=['references'])
+@quiz_item(choices=[], tags=['references', 'moderate'])
 def question_05():
     l1 = [3, [66, 55, 44], (7, 8, 9)]
     l2 = list(l1)
@@ -42,7 +42,7 @@ def question_05():
 def question_06():
     def f(obj):
         obj['a'] = 1
-        return a
+        return obj
 
     d1 = {}
     return d1 == f(d1)

@@ -1,8 +1,8 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 
-@quiz_item(choices=[3, None, 'enter'], tags=['with'])
+@quiz_item(choices=[3, None, 'enter'], tags=['with', 'moderate'])
 def question_01():
     class LookingGlass:
         def __enter__(self):
@@ -13,8 +13,3 @@ def question_01():
 
     with LookingGlass() as what:
         return what
-
-
-@quiz_item(choices=[7, 4], tags=['with'])
-def question_02():
-    pass

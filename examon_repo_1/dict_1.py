@@ -1,8 +1,8 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 @quiz_item(choices=[], tags=['dict1'])
-def question_01():
+def question():
     num_words = {
         1: 'one', 2: 'two',
         3: 'three', 4: 'four',
@@ -12,7 +12,7 @@ def question_01():
 
 
 @quiz_item(choices=[], tags=['dict'])
-def question_02():
+def question():
     def dump(**kwargs):
         return kwargs
 
@@ -20,14 +20,14 @@ def question_02():
 
 
 @quiz_item(choices=[], tags=['dict1'], generated_choices='answer_plus_random')
-def question_03():
+def question():
     d1 = {'a': 1, 'b': 3}
     d2 = {'a': 2, 'b': 4, 'c': 6}
     return d1 | d2
 
 
 @quiz_item(choices=[], tags=['dict'])
-def question_04():
+def question():
     d1 = {'a': 1, 'b': 3}
     d2 = {'a': 2, 'b': 4, 'c': 6}
     d1 |= d2
@@ -35,8 +35,9 @@ def question_04():
 
 
 @quiz_item(choices=[], tags=['dict'])
-def question_05():
-    return isinstance({}, abc.Mapping) == isinstance({}, abc.MutableMapping)
+def question():
+    import abc
+    return isinstance({}, abc.Mapping), isinstance({}, abc.MutableMapping)
 
 
 @quiz_item(choices=[], tags=['dict'])
@@ -45,7 +46,7 @@ def question_06():
     car2 = {"model": "Mustang", "year": 1964, 'color': 'blue'}
     car1.setdefault("color", "white")
     car2.setdefault("color", "white")
-    return (car1['color'], car2['color'])
+    return car1['color'], car2['color']
 
 
 @quiz_item(choices=[], tags=['dict'])

@@ -1,8 +1,7 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
-
-@quiz_item(choices=['(False, True)'], tags=['operator_overloading1'])
+@quiz_item(choices=[(False, True), (True, False)], tags=['operator_overloading1', 'hard'])
 def question_01():
     import decimal
     ctx = decimal.getcontext()
@@ -14,7 +13,7 @@ def question_01():
     return (result1, result2)
 
 
-@quiz_item(choices=[], tags=['operator_overloading'])
+@quiz_item(choices=[], tags=['operator_overloading', 'collections'])
 def question_02():
     from collections import Counter
     ct = Counter('abracadabra')
@@ -24,7 +23,7 @@ def question_02():
     return ct == ct2
 
 
-@quiz_item(choices=[], tags=['operator_overloading'])
+@quiz_item(choices=[], tags=['operator_overloading', '__slots__'])
 def question_03():
     import math as M
 
@@ -51,7 +50,7 @@ def question_03():
     return Circle(2) + Circle(6)
 
 
-@quiz_item(choices=[], tags=['operator_overloading'])
+@quiz_item(choices=[], tags=['operator_overloading', '__mul__', '__rmul__'])
 def question_03():
     class Number:
         def __init__(self, value):
@@ -76,7 +75,8 @@ def question_03():
     return (Number(2) * 4, Number(2) * Number(2), 4 * Number(1))
 
 
-@quiz_item(choices=[], tags=['operator_overloading'])
+@quiz_item(choices=[], tags=['operator_overloading', '__eq__',
+                             '__gt__', '__lt__'])
 def question_03():
     class Person:
         def __init__(self, name): self.name = name
@@ -89,7 +89,7 @@ def question_03():
     return (chuck > bob, chuck == bob, chuck < bob)
 
 
-@quiz_item(choices=[], tags=['operator_overloading1'])
+@quiz_item(choices=[], tags=['operator_overloading1', '__iadd__'])
 def question_03():
     class Number():
         def __init__(self, number):

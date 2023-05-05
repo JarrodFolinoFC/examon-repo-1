@@ -1,4 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 @quiz_item(choices=[True, False], tags=['dunder'])

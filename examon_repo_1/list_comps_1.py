@@ -1,4 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 @quiz_item(choices=[], tags=['list_comphrehensions'])
@@ -10,13 +10,13 @@ def question_01():
 
 @quiz_item(choices=[], tags=['list_comphrehensions'])
 def question_02():
-    codes = [last := c for c in [1, 2, 3, 4, 5]]
+    _ = [last := c for c in [1, 2, 3, 4, 5]]
     return last
 
 
 @quiz_item(choices=[], tags=['list_comphrehensions'])
 def question_03():
-    codes = [last := c for c in [1, '2', 3, 4, '5'] if isinstance(c, int)]
+    _ = [last := c for c in [1, '2', 3, 4, '5'] if isinstance(c, int)]
     return last
 
 
@@ -36,7 +36,11 @@ def question_05():
 
 @quiz_item(choices=[], tags=['list_comphrehensions'])
 def question_06():
-    return type(hash((10, 'alpha', [1, 2])))
+    try:
+        _value = type(hash((10, 'alpha', [1, 2])))
+        return 'ok'
+    except Exception:
+        return 'error'
 
 
 @quiz_item(choices=[], tags=['list_comphrehensions'])

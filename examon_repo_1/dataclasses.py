@@ -1,4 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 @quiz_item(choices=['wrong answer'], tags=['mytag'])
@@ -45,16 +45,6 @@ def question_04():
         lon=37.617)
 
 
-@quiz_item(choices=[], tags=['dataclasses'])
-def question_05():
-    from typing import NamedTuple
-
-    class Word(NamedTuple):
-        word: string
-
-        def __str__(self):
-            return f'{self.word} is {len(self.word)} character/s long'
-
 
 @quiz_item(choices=[], tags=['dataclasses'])
 def question_06():
@@ -88,8 +78,7 @@ def question_08():
 def question_09():
     from collections import namedtuple
     City = namedtuple('City', 'name country population')
-    delhi_data = ('Delhi NCR', 'IN', 21.935)
-    delhi = City._make(delhi_data)
+    delhi = City._make(('Delhi NCR', 'IN', 21.935))
     return delhi._asdict()
 
 

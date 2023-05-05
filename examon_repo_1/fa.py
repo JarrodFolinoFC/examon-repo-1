@@ -1,5 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
-
+from examon_core.quiz_item import quiz_item
 
 
 @quiz_item(choices=[1, 2, 3, 4, 5, 6, 7], tags=['fa'])
@@ -45,12 +44,12 @@ def question_01():
 
 @quiz_item(choices=[1, 2, 3, 4, 5, 6, 7], tags=['fa'])
 def question_01():
-    def filter(array):
+    def my_filter(array):
         return [a for a in array if isinstance(a, int)]
 
-    def dosort(a):
+    def my_sort(a):
         sorted(a)
 
-    a = filter([1, 2, 3, '4', 5, 6, 7, None])
-    dosort(a)
+    a = my_filter([1, 2, 3, '4', 5, 6, 7, None])
+    my_sort(a)
     return a[-3]

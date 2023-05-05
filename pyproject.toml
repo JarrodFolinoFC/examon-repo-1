@@ -1,13 +1,19 @@
 [tool.poetry]
-name = "examon-repo-1"
-version = "1.0.1"
+name = "examon_repo_1"
+version = "1.0.2"
 description = ""
 authors = ["Jarrod Folino <jdfolino@icloud.com>"]
 readme = "README.md"
 packages = [{include = "examon_repo_1"}]
 
+[[tool.poetry.source]]
+name = "test"
+url = "https://test.pypi.org/simple/"
+secondary = true
+
 [tool.poetry.dependencies]
 python = "^3.9"
+examon-core = "0.5.4"
 
 
 [build-system]

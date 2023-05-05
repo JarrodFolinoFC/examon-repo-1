@@ -1,4 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 bool_tuple_choices = [(True, False), (False, True),
                       (True, True), (False, False)]

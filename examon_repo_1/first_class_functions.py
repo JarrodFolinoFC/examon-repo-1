@@ -1,6 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
-
-from functools import reduce
+from examon_core.quiz_item import quiz_item
 
 
 @quiz_item(choices=[], tags=['dunder'])
@@ -18,7 +16,7 @@ def question_01():
 def question_02():
     from functools import reduce
     from operator import add
-    return (reduce(add, range(50)), sum(range(50)))
+    return reduce(add, range(50)), sum(range(50))
 
 
 @quiz_item(choices=[], tags=['dunder'])
@@ -64,37 +62,6 @@ def question_07():
         return x + y + z
 
     return add(1, 2, 3) + add(1, 2, z=3)
-
-
-@quiz_item(choices=[], tags=['dunder'])
-def question_08():
-    from functools import reduce
-
-    def factorial(n):
-        return reduce(lambda a, b: a * b, range(1, n + 1))
-
-    return factorial(3)
-
-
-@quiz_item(choices=[], tags=['dunder'])
-def question_09():
-    from functools import reduce
-
-    def add_together(nums):
-        return reduce(lambda a, b: a + b, nums)
-
-    return add_together([1, 2, 3, 4, 5, 6])
-
-
-@quiz_item(choices=[], tags=['dunder'])
-def question_10():
-    from functools import reduce
-    from operator import mul
-
-    def factorial(n):
-        return reduce(mul, range(1, n + 1))
-
-    return factorial(3)
 
 
 @quiz_item(choices=[], tags=['dunder'])

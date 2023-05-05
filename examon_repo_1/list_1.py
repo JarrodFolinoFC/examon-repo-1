@@ -1,4 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
 
@@ -29,3 +29,12 @@ def question_04():
     from array import array
     nums = array('i', [1, 2, 3, 4, 5])
     return set(dir(nums.__class__)) - set(dir([].__class__))
+
+def question_03():
+    return [a for a in list(set(dir([1].__class__)) -
+                            set(dir((1).__class__))) if not a.startswith('__')]
+
+
+def question_04():
+    l = [2, 3, 4, 5]
+    return sorted(l, reverse=True) == l.sort().reverse()

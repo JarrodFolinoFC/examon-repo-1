@@ -1,7 +1,7 @@
-from examon_core.models.quiz_item import quiz_item
+from examon_core.quiz_item import quiz_item
 
 
-@quiz_item(choices=[None, ''], tags=['quiz'])
+@quiz_item(choices=[None, ''], tags=['decorators'])
 def question_01():
     def deco(func):
         def inner():
@@ -16,7 +16,7 @@ def question_01():
     return target()
 
 
-@quiz_item(choices=[0, None, 2], tags=['quiz'])
+@quiz_item(choices=[0, None, 2], tags=['decorators'])
 def question_02():
     registry = []
 
@@ -42,7 +42,7 @@ def question_02():
     return len(registry)
 
 
-@quiz_item(choices=[6, 4], tags=['quiz'])
+@quiz_item(choices=[6, 4], tags=['decorators'])
 def question_03():
     b = 6
 
@@ -54,7 +54,7 @@ def question_03():
     return b
 
 
-@quiz_item(choices=[5, 10, 15], tags=['quiz'])
+@quiz_item(choices=[5, 10, 15], tags=['decorators'])
 def question_04():
     def make_averager():
         series = []
@@ -73,7 +73,7 @@ def question_04():
     return avg(15)
 
 
-@quiz_item(choices=[(None, None)], tags=['quiz'])
+@quiz_item(choices=[(None, None)], tags=['decorators'])
 def question_05():
     def make_averager():
         series = []
@@ -86,10 +86,10 @@ def question_05():
         return averager
 
     avg = make_averager()
-    return (avg.__code__.co_varnames, avg.__code__.co_freevars)
+    return avg.__code__.co_varnames, avg.__code__.co_freevars
 
 
-@quiz_item(choices=[5, 10, 15], tags=['quiz'])
+@quiz_item(choices=[5, 10, 15], tags=['decorators'])
 def question_06():
     def make_averager():
         count = 0
@@ -108,7 +108,7 @@ def question_06():
     return avg(5)
 
 
-@quiz_item(choices=['Hello'], tags=['quiz'])
+@quiz_item(choices=['Hello'], tags=['decorators'])
 def question_07():
     from functools import wraps
 
@@ -125,7 +125,7 @@ def question_07():
     return hello()
 
 
-@quiz_item(choices=[], tags=['quiz'])
+@quiz_item(choices=[], tags=['decorators'])
 def question_08():
     from functools import singledispatch
 
@@ -140,7 +140,7 @@ def question_08():
     return (overload({}), overload(''))
 
 
-@quiz_item(choices=[], tags=['quiz'])
+@quiz_item(choices=[], tags=['decorators'])
 def question_09():
     registry = set()
 
@@ -172,7 +172,7 @@ def question_09():
     return len(registry)
 
 
-@quiz_item(choices=[], tags=['quiz'])
+@quiz_item(choices=[], tags=['decorators'])
 def question_10():
     class function_wrapper(object):
         def __init__(self, wrapped):
@@ -188,7 +188,7 @@ def question_10():
     return a()
 
 
-@quiz_item(choices=[], tags=['quiz'])
+@quiz_item(choices=[], tags=['decorators'])
 def question_11():
     def function_wrapper(wrapped):
         def _wrapper(*args, **kwargs):
@@ -205,7 +205,7 @@ def question_11():
     return function.__name__
 
 
-@quiz_item(choices=[], tags=['quiz'])
+@quiz_item(choices=[], tags=['decorators'])
 def question_12():
     import functools
 
@@ -223,7 +223,7 @@ def question_12():
     return function.__name__
 
 
-@quiz_item(choices=[], tags=['quiz'])
+@quiz_item(choices=[], tags=['decorators'])
 def question_13():
     import functools
 
@@ -242,7 +242,7 @@ def question_13():
     return function.__name__
 
 
-@quiz_item(choices=[], tags=['quiz'])
+@quiz_item(choices=[], tags=['decorators'])
 def question_14():
     import functools
 

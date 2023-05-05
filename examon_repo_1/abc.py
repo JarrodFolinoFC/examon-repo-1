@@ -1,7 +1,7 @@
-from examon_core.models.quiz_item import quiz_item, ChoiceGenerator
+from examon_core.quiz_item import quiz_item
 
 
-@quiz_item(choices=ChoiceGenerator.boolean_tuple_pair_answers(),
+@quiz_item(choices=[],
            tags=['iterators'], hints=['here is a hint'])
 def question():
     from collections import abc
@@ -14,7 +14,7 @@ def question():
         def __iter__(self):
             pass
 
-    return (isinstance(A(), abc.Iterable), isinstance(B(), abc.Iterable))
+    return isinstance(A(), abc.Iterable), isinstance(B(), abc.Iterable)
 
 
 @quiz_item(choices=[True, False], tags=['iterators'])

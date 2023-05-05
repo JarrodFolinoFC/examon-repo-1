@@ -1,6 +1,4 @@
-from examon_core.models.quiz_item import quiz_item
-
-from collections import OrderedDict
+from examon_core.quiz_item import quiz_item
 
 
 @quiz_item(choices=[], tags=['inheritance'])
@@ -19,8 +17,10 @@ def question():
             super().hello()
             return f'{super().hello()} there'
 
+    return Parent().hello()
 
-@quiz_item(choices=[], tags=['inheritance'])
+
+@quiz_item(choices=[], tags=['inheritance', 'hard'])
 def question():
     import collections
 
@@ -35,7 +35,7 @@ def question():
     return DoppelDict1(one=1).values(), DoppelDict2(one=1).values()
 
 
-@quiz_item(choices=[], tags=['inheritance'])
+@quiz_item(choices=[], tags=['inheritance', 'moderate'])
 def question():
     class Root:
         pass
@@ -57,7 +57,7 @@ choices = [('Leaf.ping()->A.ping()->Root.ping()', 'B.pong()->Root.pong()')]
 
 @quiz_item(choices=choices,
            tags=['inheritance'],
-           hints=['How does the Python Method Resultion Order work',
+           hints=['How does the Python Method Resolution Order work',
                   'What would Leaf.__mro__ return?'])
 def question():
     class Root:
